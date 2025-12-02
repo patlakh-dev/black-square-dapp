@@ -115,7 +115,7 @@ export function MalevichSquare({ size = 320 }: MalevichSquareProps) {
       <div className="absolute inset-8 border border-ivory/10" />
       <div className="absolute inset-0 bg-black shadow-[0_40px_80px_rgba(0,0,0,0.65)]" />
       <motion.div
-        className="absolute -bottom-6 -right-10 h-16 w-32 border"
+        className="absolute -bottom-6 -right-10 h-16 w-32 border md:hidden"
         style={{
           borderColor: glowStyle.borderColor,
           boxShadow: glowStyle.boxShadow,
@@ -129,7 +129,7 @@ export function MalevichSquare({ size = 320 }: MalevichSquareProps) {
           ease: 'easeOut',
         }}
       />
-      <div className="absolute -top-8 -left-6 h-10 w-10 border border-ivory/30" />
+      <div className="absolute -top-8 -left-6 h-10 w-10 border border-ivory/30 md:hidden" />
     </div>
   );
 }

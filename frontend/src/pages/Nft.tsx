@@ -146,18 +146,7 @@ export default function NftPage() {
 
         <div className="hidden md:flex flex-col items-center justify-center gap-6">
           <MalevichSquare size={320} />
-          <p className="text-center text-sm text-ivory/60">
-            Token metadata is an on-chain JSON stub with an SVG homage to Malevich&apos;s square.
-            Supply is uncapped, yet the contract enforces one mint per wallet.
-          </p>
         </div>
-      </div>
-      
-      <div className="md:hidden">
-        <p className="text-center text-sm text-ivory/60">
-          Token metadata is an on-chain JSON stub with an SVG homage to Malevich&apos;s square.
-          Supply is uncapped, yet the contract enforces one mint per wallet.
-        </p>
       </div>
 
       {nftStakingAddress && blackSquareAddress && <NFTStakingPanel />}

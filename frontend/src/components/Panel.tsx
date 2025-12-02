@@ -10,7 +10,7 @@ type PanelProps = {
 export function Panel({ title, subtitle, children }: PanelProps) {
   return (
     <motion.section
-      className="border border-ivory/10 bg-ash/30 p-4 md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)] overflow-visible"
+      className="border border-ivory/10 bg-ash/30 p-4 md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
