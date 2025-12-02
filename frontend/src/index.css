@@ -1,0 +1,692 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #000;
+  color: #f5f5f5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  html {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  #root {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* Performance optimizations for animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU acceleration for animated elements */
+[data-framer-component] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Ensure header doesn't clip buttons */
+header,
+[class*="header"],
+[class*="Header"] {
+  overflow: visible !important;
+}
+
+/* RainbowKit custom styling for black square aesthetic */
+[data-rk] {
+  --rk-colors-connectButtonBackground: #000000;
+  --rk-colors-connectButtonText: #f5f5f5;
+  --rk-colors-connectButtonBorder: rgba(245, 245, 245, 0.2);
+  --rk-colors-accountButtonBackground: #000000;
+  --rk-colors-accountButtonText: #f5f5f5;
+  --rk-colors-accountButtonBorder: rgba(245, 245, 245, 0.2);
+  --rk-colors-modalBackground: #000000;
+  --rk-colors-modalText: #f5f5f5;
+  --rk-colors-modalTextDim: rgba(245, 245, 245, 0.6);
+  --rk-colors-modalBackdrop: transparent;
+  --rk-colors-generalBorder: rgba(245, 245, 245, 0.1);
+  --rk-colors-menuItemBackground: #000000;
+  --rk-colors-connectionIndicator: #d2042d;
+  --rk-colors-actionButtonBorder: rgba(245, 245, 245, 0.1);
+  --rk-colors-actionButtonBackground: #000000;
+  --rk-colors-actionButtonBackgroundHover: #000000;
+  --rk-shadows-connectButton: none;
+  --rk-shadows-dialog: none;
+  --rk-blurs-modalOverlay: none;
+  --rk-radii-connectButton: 0px;
+  --rk-radii-actionButton: 0px;
+  --rk-radii-menuButton: 0px;
+  --rk-radii-modal: 0px;
+}
+
+/* Override RainbowKit button styles - sharp corners, minimal design */
+[data-rk] button,
+[data-rk] [role="button"] {
+  border-radius: 0 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 300 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 0.75rem !important;
+  box-shadow: none !important;
+}
+
+/* Make ConnectButton the same size as nav buttons */
+[data-rk] [class*="ConnectButton"],
+[data-rk] [class*="connectButton"],
+[data-rk] button[data-testid*="rk-account-button"],
+[data-rk] [class*="AccountButton"] {
+  padding: 0.5rem 1rem !important;
+  min-height: auto !important;
+  height: auto !important;
+  line-height: 1.5 !important;
+}
+
+/* Network selector button - black with thin border */
+[data-rk] [data-testid="rk-chain-button"],
+[data-rk] button[aria-label*="network"],
+[data-rk] button[aria-label*="chain"] {
+  background: #000000 !important;
+  border: 1px solid rgba(245, 245, 245, 0.2) !important;
+  color: #f5f5f5 !important;
+  padding: 0.5rem 1rem !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+[data-rk] [data-testid="rk-chain-button"]:hover,
+[data-rk] button[aria-label*="network"]:hover {
+  border: 1px solid rgba(245, 245, 245, 0.4) !important;
+  background: rgba(245, 245, 245, 0.02) !important;
+  overflow: visible !important;
+}
+
+/* Connect button - black with thin border */
+[data-rk] [data-testid="rk-connect-button"],
+[data-rk] button[aria-label*="connect"] {
+  background: #000000 !important;
+  border: 1px solid rgba(245, 245, 245, 0.2) !important;
+  color: #f5f5f5 !important;
+  padding: 0.5rem 1rem !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+[data-rk] [data-testid="rk-connect-button"]:hover,
+[data-rk] button[aria-label*="connect"]:hover {
+  border: 1px solid #d2042d !important;
+  border-right: 1px solid #d2042d !important;
+  border-top: 1px solid #d2042d !important;
+  border-bottom: 1px solid #d2042d !important;
+  border-left: 1px solid #d2042d !important;
+  color: #d2042d !important;
+  overflow: visible !important;
+  outline: 1px solid #d2042d !important;
+  outline-offset: -1px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  width: auto !important;
+  min-width: fit-content !important;
+  margin: 0 !important;
+  padding: 0.5rem 1rem !important;
+}
+
+/* Account button - black with thin border */
+[data-rk] [data-testid="rk-account-button"],
+[data-rk] button[aria-label*="account"],
+[data-rk] button[aria-label*="wallet"] {
+  background: #000000 !important;
+  border: 1px solid rgba(245, 245, 245, 0.2) !important;
+  color: #f5f5f5 !important;
+  padding: 0.5rem 1rem !important;
+  box-sizing: border-box !important;
+  justify-content: center !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* Remove borders from child elements */
+[data-rk] [data-testid="rk-account-button"] > *,
+[data-rk] [data-testid="rk-account-button"] > div,
+[data-rk] button[aria-label*="account"] > *,
+[data-rk] button[aria-label*="account"] > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-weight: 300 !important;
+}
+
+/* Account button text - light font weight */
+[data-rk] [data-testid="rk-account-button"] span,
+[data-rk] [data-testid="rk-account-button"] p,
+[data-rk] [data-testid="rk-account-button"] div,
+[data-rk] button[aria-label*="account"] span,
+[data-rk] button[aria-label*="account"] p,
+[data-rk] button[aria-label*="account"] div,
+[data-rk] [data-testid="rk-account-button"] *,
+[data-rk] button[aria-label*="account"] * {
+  font-weight: 300 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+[data-rk] [data-testid="rk-account-button"]:hover,
+[data-rk] button[aria-label*="account"]:hover {
+  border: 1px solid rgba(245, 245, 245, 0.4) !important;
+  border-top: 1px solid rgba(245, 245, 245, 0.4) !important;
+  border-right: 1px solid rgba(245, 245, 245, 0.4) !important;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.4) !important;
+  border-left: 1px solid rgba(245, 245, 245, 0.4) !important;
+  background: #000000 !important;
+  background-color: #000000 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  contain: none !important;
+}
+
+[data-rk] [data-testid="rk-account-button"]:hover > *,
+[data-rk] [data-testid="rk-account-button"]:hover > div,
+[data-rk] button[aria-label*="account"]:hover > *,
+[data-rk] button[aria-label*="account"]:hover > div {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Make overlay/backdrop transparent - all possible selectors */
+body > div[class*="rk__"],
+body > div[class*="RainbowKit"],
+body > div[id*="rk"],
+body > div[id*="rainbow"],
+body > div[class*="rk__"] > div:first-child,
+body > div[class*="RainbowKit"] > div:first-child,
+body > div[class*="rk__"] > div,
+body > div[class*="RainbowKit"] > div,
+body > div[class*="rk__"] > div:not([role="dialog"]),
+body > div[class*="RainbowKit"] > div:not([role="dialog"]),
+body > div:nth-child(3) > div > div,
+body > div:nth-child(3) > div,
+body > div:nth-child(3),
+[data-rk] [class*="overlay"],
+[data-rk] [class*="Overlay"],
+[data-rk] [class*="backdrop"],
+[data-rk] [class*="Backdrop"],
+div[class*="rk__overlay"],
+div[class*="rk__backdrop"],
+div[class*="RainbowKit__overlay"],
+div[class*="RainbowKit__backdrop"],
+div[role="presentation"],
+div[aria-hidden="true"]:not([role="dialog"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Specifically target the overlay container before dialog */
+body > div:nth-child(3):not([role="dialog"]) > div:not([role="dialog"]) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Target RainbowKit overlay classes directly - more aggressive */
+[data-rk] ._9pm4ki3,
+[data-rk] .ju367vb3,
+[data-rk] .ju367v9h,
+[data-rk] [class*="_9pm4ki3"],
+[data-rk] [class*="ju367vb3"],
+[data-rk] [class*="ju367v9h"],
+div._9pm4ki3,
+div.ju367vb3,
+div.ju367v9h,
+div[class*="_9pm4ki3"],
+div[class*="ju367vb3"],
+div[class*="ju367v9h"],
+body > div > div > div._9pm4ki3,
+body > div > div > div.ju367vb3,
+body > div > div > div.ju367v9h {
+  --rk-colors-modalBackdrop: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Modal styles - black background, centered */
+[data-rk] [role="dialog"],
+[data-rk] [role="dialog"] > div,
+[data-rk] [class*="modal"],
+[data-rk] [class*="Modal"],
+[data-rk] [class*="dialog"],
+[data-rk] [class*="Dialog"],
+[data-rk] [class*="chainModal"],
+[data-rk] [class*="ChainModal"],
+[data-rk] [class*="networkModal"],
+[data-rk] [class*="NetworkModal"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: 1px solid rgba(245, 245, 245, 0.1) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+
+/* Modal content - ensure all children are black */
+[data-rk] [role="dialog"] *,
+[data-rk] [class*="modal"] *,
+[data-rk] [class*="Modal"] * {
+  background-color: #000000 !important;
+}
+
+/* Modal text - light font weight */
+[data-rk] [role="dialog"],
+[data-rk] [class*="modal"],
+[data-rk] [class*="Modal"],
+[data-rk] [role="dialog"] *,
+[data-rk] [class*="modal"] *,
+[data-rk] [class*="Modal"] *,
+[data-rk] [role="dialog"] h1,
+[data-rk] [role="dialog"] h2,
+[data-rk] [role="dialog"] h3,
+[data-rk] [role="dialog"] p,
+[data-rk] [role="dialog"] span,
+[data-rk] [role="dialog"] div,
+[data-rk] [class*="modal"] h1,
+[data-rk] [class*="modal"] h2,
+[data-rk] [class*="modal"] h3,
+[data-rk] [class*="modal"] p,
+[data-rk] [class*="modal"] span,
+[data-rk] [class*="modal"] div {
+  font-weight: 300 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* Override for selected/active items - red */
+[data-rk] [role="dialog"] [aria-selected="true"],
+[data-rk] [class*="modal"] [aria-selected="true"],
+[data-rk] [class*="Modal"] [aria-selected="true"],
+[data-rk] [role="dialog"] [class*="selected"],
+[data-rk] [class*="modal"] [class*="selected"],
+[data-rk] [class*="Modal"] [class*="selected"],
+[data-rk] [role="dialog"] [class*="active"],
+[data-rk] [class*="modal"] [class*="active"],
+[data-rk] [class*="Modal"] [class*="active"] {
+  background: #d2042d !important;
+  background-color: #d2042d !important;
+}
+
+/* Menu items - minimal hover effect */
+[data-rk] [role="menuitem"],
+[data-rk] [role="option"],
+[data-rk] [class*="chainOption"],
+[data-rk] [class*="ChainOption"],
+[data-rk] [class*="networkOption"],
+[data-rk] [class*="NetworkOption"],
+[data-rk] button[class*="chain"],
+[data-rk] button[class*="Chain"],
+[data-rk] button[class*="network"],
+[data-rk] button[class*="Network"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-weight: 300 !important;
+}
+
+/* Network option text - light font */
+[data-rk] [role="menuitem"] *,
+[data-rk] [role="option"] *,
+[data-rk] [class*="chainOption"] *,
+[data-rk] [class*="ChainOption"] *,
+[data-rk] [class*="networkOption"] *,
+[data-rk] [class*="NetworkOption"] *,
+[data-rk] button[class*="chain"] *,
+[data-rk] button[class*="Chain"] *,
+[data-rk] button[class*="network"] *,
+[data-rk] button[class*="Network"] * {
+  font-weight: 300 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+[data-rk] [role="menuitem"]:hover,
+[data-rk] [role="option"]:hover,
+[data-rk] [class*="chainOption"]:hover,
+[data-rk] [class*="ChainOption"]:hover,
+[data-rk] [class*="networkOption"]:hover,
+[data-rk] [class*="NetworkOption"]:hover {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-left: 2px solid #d2042d !important;
+}
+
+/* Active/selected network option - red background */
+[data-rk] [role="menuitem"][aria-selected="true"],
+[data-rk] [role="option"][aria-selected="true"],
+[data-rk] [class*="chainOption"][aria-selected="true"],
+[data-rk] [class*="ChainOption"][aria-selected="true"],
+[data-rk] button[class*="chain"][aria-selected="true"],
+[data-rk] button[class*="Chain"][aria-selected="true"] {
+  background: #d2042d !important;
+  background-color: #d2042d !important;
+  color: #f5f5f5 !important;
+}
+
+/* Remove all shadows and rounded corners */
+[data-rk] * {
+  box-shadow: none !important;
+}
+
+/* Ensure buttons don't clip borders */
+[data-rk] button {
+  overflow: visible !important;
+}
+
+/* Ensure parent containers don't clip borders on hover */
+[data-rk] button:hover,
+[data-rk] [data-testid="rk-connect-button"]:hover,
+[data-rk] [data-testid="rk-account-button"]:hover,
+[data-rk] [data-testid="rk-chain-button"]:hover {
+  overflow: visible !important;
+  clip-path: none !important;
+  contain: none !important;
+}
+
+/* Ensure account button parent doesn't clip borders */
+[data-rk] [data-testid="rk-account-button"]:hover,
+[data-rk] button[aria-label*="account"]:hover {
+  margin: 0 !important;
+  padding: 0.5rem 1rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure parent wrapper doesn't clip */
+[data-rk] > div,
+[data-rk] [class*="ConnectButton"],
+[data-rk] [class*="AccountButton"],
+[data-rk] [class*="connectButton"],
+[data-rk] [class*="accountButton"],
+[data-rk] div[class*="rk"],
+[data-rk] div[class*="Rainbow"] {
+  overflow: visible !important;
+}
+
+/* Force visible overflow on button containers specifically */
+[data-rk] [data-testid="rk-connect-button"],
+[data-rk] [data-testid="rk-account-button"],
+[data-rk] [data-testid="rk-chain-button"] {
+  overflow: visible !important;
+}
+
+[data-rk] [data-testid="rk-connect-button"]:hover,
+[data-rk] [data-testid="rk-account-button"]:hover,
+[data-rk] [data-testid="rk-chain-button"]:hover {
+  overflow: visible !important;
+}
+
+/* But restore normal overflow for scrollable areas */
+[data-rk] [role="dialog"],
+[data-rk] [class*="modal"] {
+  overflow: auto !important;
+}
+
+[data-rk] [data-rk] {
+  border-radius: 0 !important;
+}
+
+/* Re-apply custom borders for key buttons after global reset */
+[data-rk] [data-testid="rk-chain-button"],
+[data-rk] [data-testid="rk-account-button"],
+[data-rk] [data-testid="rk-connect-button"],
+[data-rk] button[aria-label*="network"],
+[data-rk] button[aria-label*="chain"],
+[data-rk] button[aria-label*="wallet"],
+[data-rk] button[aria-label*="connect"],
+[data-rk] button[aria-label*="account"] {
+  border: 1px solid rgba(245, 245, 245, 0.2) !important;
+  overflow: visible !important;
+}
+
+[data-rk] [data-testid="rk-connect-button"]:hover,
+[data-rk] button[aria-label*="connect"]:hover {
+  border: 1px solid #d2042d !important;
+  border-right: 1px solid #d2042d !important;
+  border-top: 1px solid #d2042d !important;
+  border-bottom: 1px solid #d2042d !important;
+  border-left: 1px solid #d2042d !important;
+  overflow: visible !important;
+  outline: none !important;
+}
+
+/* Keep RainbowKit buttons in one line */
+[data-rk] [data-testid="rk-chain-button"],
+[data-rk] [data-testid="rk-connect-button"] {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Account button - allow borders to be visible */
+[data-rk] [data-testid="rk-account-button"] {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* RainbowKit container - prevent overflow but allow account button borders */
+[data-rk] > div {
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Mobile responsive adjustments for RainbowKit */
+@media (max-width: 640px) {
+  [data-rk] [data-testid="rk-account-button"],
+  [data-rk] [data-testid="rk-connect-button"] {
+    font-size: 0.65rem !important;
+    padding: 0.375rem 0.75rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  [data-rk] [data-testid="rk-account-button"] > div,
+  [data-rk] [data-testid="rk-connect-button"] > div {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+
+/* RainbowKit button container - keep inline */
+[data-rk] > div {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Network selection modal - all black */
+[data-rk] [class*="ChainOption"],
+[data-rk] [class*="chainOption"],
+[data-rk] [class*="NetworkOption"],
+[data-rk] [class*="networkOption"],
+[data-rk] li[class*="chain"],
+[data-rk] li[class*="Chain"],
+[data-rk] li[class*="network"],
+[data-rk] li[class*="Network"],
+[data-rk] div[class*="chain"],
+[data-rk] div[class*="Chain"],
+[data-rk] div[class*="network"],
+[data-rk] div[class*="Network"] {
+  background: #000000 !important;
+  background-color: #000000 !important;
+}
+
+/* Selected network - red background */
+[data-rk] [class*="ChainOption"][aria-selected="true"],
+[data-rk] [class*="chainOption"][aria-selected="true"],
+[data-rk] [class*="NetworkOption"][aria-selected="true"],
+[data-rk] [class*="networkOption"][aria-selected="true"],
+[data-rk] li[class*="chain"][aria-selected="true"],
+[data-rk] li[class*="Chain"][aria-selected="true"],
+[data-rk] li[class*="selected"],
+[data-rk] div[class*="selected"] {
+  background: #d2042d !important;
+  background-color: #d2042d !important;
+}
+
+/* Network list items - force black */
+[data-rk] [role="list"],
+[data-rk] [role="listbox"],
+[data-rk] ul[class*="chain"],
+[data-rk] ul[class*="Chain"],
+[data-rk] ul[class*="network"],
+[data-rk] ul[class*="Network"] {
+  background: #000000 !important;
+}
+
+[data-rk] [role="list"] > *,
+[data-rk] [role="listbox"] > *,
+[data-rk] ul[class*="chain"] > *,
+[data-rk] ul[class*="Chain"] > *,
+[data-rk] ul[class*="network"] > *,
+[data-rk] ul[class*="Network"] > * {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  font-weight: 300 !important;
+}
+
+/* Account details modal - light font */
+[data-rk] [class*="AccountDetails"],
+[data-rk] [class*="accountDetails"],
+[data-rk] [class*="ProfileDetails"],
+[data-rk] [class*="profileDetails"],
+[data-rk] [class*="WalletDetails"],
+[data-rk] [class*="walletDetails"] {
+  font-weight: 300 !important;
+}
+
+[data-rk] [class*="AccountDetails"] *,
+[data-rk] [class*="accountDetails"] *,
+[data-rk] [class*="ProfileDetails"] *,
+[data-rk] [class*="profileDetails"] *,
+[data-rk] [class*="WalletDetails"] *,
+[data-rk] [class*="walletDetails"] *,
+[data-rk] [class*="AccountDetails"] h1,
+[data-rk] [class*="AccountDetails"] h2,
+[data-rk] [class*="AccountDetails"] p,
+[data-rk] [class*="AccountDetails"] span,
+[data-rk] [class*="AccountDetails"] div {
+  font-weight: 300 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* All text in modals - light font weight */
+[data-rk] [role="dialog"] h1,
+[data-rk] [role="dialog"] h2,
+[data-rk] [role="dialog"] h3,
+[data-rk] [role="dialog"] h4,
+[data-rk] [role="dialog"] p,
+[data-rk] [role="dialog"] span,
+[data-rk] [role="dialog"] div,
+[data-rk] [role="dialog"] button,
+[data-rk] [class*="modal"] h1,
+[data-rk] [class*="modal"] h2,
+[data-rk] [class*="modal"] h3,
+[data-rk] [class*="modal"] h4,
+[data-rk] [class*="modal"] p,
+[data-rk] [class*="modal"] span,
+[data-rk] [class*="modal"] div,
+[data-rk] [class*="modal"] button {
+  font-weight: 300 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* Connected status text - light */
+[data-rk] [class*="Connected"],
+[data-rk] [class*="connected"],
+[data-rk] span[class*="status"],
+[data-rk] span[class*="Status"] {
+  font-weight: 300 !important;
+}
+
+/* Force transparent overlay - highest specificity */
+body > div > div > div._9pm4ki3.ju367vb3.ju367v9h,
+body > div > div > div[class*="_9pm4ki3"][class*="ju367vb3"][class*="ju367v9h"],
+div._9pm4ki3.ju367vb3,
+div._9pm4ki3.ju367v9h,
+div.ju367vb3.ju367v9h {
+  --rk-colors-modalBackdrop: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
