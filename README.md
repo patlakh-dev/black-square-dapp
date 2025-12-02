@@ -53,16 +53,14 @@ cp .env.example .env
 ## Contracts Workflow
 
 ```bash
-cd "/Users/daniel/black square/contracts"
+cd contracts
 npm install
 cp .env.example .env       # update with RPC URLs + key
 npm run compile
 npm test
 
-# Deploy to Sepolia or Base Sepolia
+# Deploy to Sepolia
 npm run deploy:sepolia
-# or
-npm run deploy:base
 ```
 
 After deployment, note the contract address and feed it into `frontend/.env`.
@@ -70,7 +68,7 @@ After deployment, note the contract address and feed it into `frontend/.env`.
 ## Frontend Workflow
 
 ```bash
-cd "/Users/daniel/black square/frontend"
+cd frontend
 npm install
 cp .env.example .env            # set WalletConnect + contract address
 npm run dev                     # local dev server
@@ -109,7 +107,7 @@ npm run build && npm run preview
 4. Add environment variables
 5. Deploy
 
-See `GITHUB_DEPLOYMENT.md` for detailed step-by-step instructions.
+Both platforms support automatic deployments from GitHub.
 
 ### Environment Variables for Deployment
 
