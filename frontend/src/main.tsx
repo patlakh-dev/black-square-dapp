@@ -19,7 +19,6 @@ const rainbowTheme = darkTheme({
   borderRadius: 'none', // Sharp corners for suprematism
   fontStack: 'system',
   overlayBlur: 'none',
-  overlayOpacity: 0,
 });
 
 createRoot(document.getElementById('root')!).render(

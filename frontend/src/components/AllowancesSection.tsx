@@ -114,10 +114,10 @@ export function AllowancesSection() {
 
   const hasUnlimitedAllowances = results.some((r) => r.status === 'unlimited');
   
-  // Find suspicious/risky allowances
-  const suspiciousResults = useMemo(() => {
-    return results.filter((r) => r.isSuspicious && r.status !== 'none');
-  }, [results]);
+  // Find suspicious/risky allowances (commented out - not currently used)
+  // const suspiciousResults = useMemo(() => {
+  //   return results.filter((r) => r.isSuspicious && r.status !== 'none');
+  // }, [results]);
 
   const highRiskResults = useMemo(() => {
     return results.filter((r) => r.riskLevel === 'high' && r.status !== 'none');
