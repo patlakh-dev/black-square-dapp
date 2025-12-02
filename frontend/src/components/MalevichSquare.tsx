@@ -6,7 +6,6 @@ type MalevichSquareProps = {
 };
 
 export function MalevichSquare({ size = 320 }: MalevichSquareProps) {
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,12 +28,13 @@ export function MalevichSquare({ size = 320 }: MalevichSquareProps) {
       const maxDistance = 200;
       setIsHovering(distance < maxDistance);
 
-      if (distance < maxDistance) {
-        setMousePosition({
-          x: e.clientX - centerX,
-          y: e.clientY - centerY,
-        });
-      }
+      // Mouse position tracking removed (not currently used)
+      // if (distance < maxDistance) {
+      //   setMousePosition({
+      //     x: e.clientX - centerX,
+      //     y: e.clientY - centerY,
+      //   });
+      // }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
