@@ -96,9 +96,9 @@ export default function NftPage() {
     mintError instanceof BaseError ? mintError.shortMessage : mintError?.message;
 
   return (
-    <div className="space-y-4 md:space-y-8">
+    <div className="space-y-4 md:space-y-8 overflow-x-hidden">
       <div className="grid gap-4 md:gap-10 md:grid-cols-2 overflow-x-hidden">
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-4 md:space-y-6 overflow-visible">
           <div>
             <p className="text-xs uppercase tracking-[0.6em] text-ivory/50">Mint</p>
             <h2 className="mt-1 md:mt-2 text-2xl md:text-3xl font-light uppercase tracking-[0.2em] md:tracking-[0.3em]">Black Square NFT</h2>

@@ -83,7 +83,7 @@ export default function DashboardPage() {
               }}
             >
               <p className="text-[0.65rem] md:text-xs">Wallet Link</p>
-              <p className="mt-2 text-lg md:text-2xl text-ivory break-words overflow-hidden">RainbowKit</p>
+              <p className="mt-2 text-lg md:text-2xl text-flare md:text-ivory break-words overflow-hidden">RainbowKit</p>
             </motion.div>
             <motion.div
               className="border border-ivory/10 p-3 md:p-4"
@@ -96,7 +96,7 @@ export default function DashboardPage() {
               }}
             >
               <p className="text-[0.65rem] md:text-xs">Chain</p>
-              <p className="mt-2 text-lg md:text-2xl text-ivory">Sepolia</p>
+              <p className="mt-2 text-lg md:text-2xl text-flare md:text-ivory">Sepolia</p>
             </motion.div>
           </div>
         </div>

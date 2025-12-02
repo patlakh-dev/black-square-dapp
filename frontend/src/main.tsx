@@ -25,7 +25,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider modalSize="compact" theme={rainbowTheme}>
+        <RainbowKitProvider modalSize="compact" theme={rainbowTheme} locale="en">
           <BrowserRouter>
             <App />
           </BrowserRouter>

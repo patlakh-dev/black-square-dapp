@@ -44,24 +44,24 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative border-2 border-ivory/20 bg-black aspect-square overflow-hidden max-w-[200px] mx-auto md:max-w-none md:mx-0"
+          className="relative border-2 border-ivory/20 bg-black aspect-square overflow-hidden max-w-[280px] md:max-w-none mx-auto md:mx-0"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full">
-              {/* Circular vignette effect using radial gradient */}
+              {/* Circular vignette effect using radial gradient - lighter on mobile */}
               <div 
-                className="absolute inset-0"
+                className="absolute inset-0 md:block hidden"
                 style={{
                   background: 'radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.95) 100%)'
                 }}
               />
               {/* Photo - circular crop with vignette */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-3/4 h-3/4 rounded-full overflow-hidden">
+                <div className="relative w-4/5 h-4/5 md:w-3/4 md:h-3/4 rounded-full overflow-hidden">
                   <img
                     src="/photo.jpg"
                     alt="Daniil Patlakh"
-                    className="w-full h-full object-cover grayscale contrast-110 brightness-90"
+                    className="w-full h-full object-cover grayscale contrast-110 brightness-90 md:brightness-90 brightness-110"
                     onError={(e) => {
                       // Fallback if image not found
                       const target = e.target as HTMLImageElement;
@@ -72,9 +72,9 @@ export default function AboutPage() {
                       }
                     }}
                   />
-                  {/* Additional vignette overlay for photo */}
+                  {/* Additional vignette overlay for photo - lighter on mobile */}
                   <div 
-                    className="absolute inset-0 rounded-full"
+                    className="absolute inset-0 rounded-full hidden md:block"
                     style={{
                       background: 'radial-gradient(circle, transparent 40%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0.6) 100%)'
                     }}

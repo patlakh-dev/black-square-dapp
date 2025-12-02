@@ -569,6 +569,28 @@ body > div > div > div.ju367v9h {
   [data-rk] [data-testid="rk-connect-button"] div {
     text-transform: none !important;
   }
+  
+  /* Force English text in wallet selection modal on mobile */
+  [data-rk] [role="dialog"] *,
+  [data-rk] [class*="modal"] *,
+  [data-rk] [class*="Modal"] * {
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+  
+  /* Override Russian text in modal */
+  [data-rk] [role="dialog"] h1,
+  [data-rk] [role="dialog"] h2,
+  [data-rk] [role="dialog"] p,
+  [data-rk] [role="dialog"] span,
+  [data-rk] [role="dialog"] button,
+  [data-rk] [class*="modal"] h1,
+  [data-rk] [class*="modal"] h2,
+  [data-rk] [class*="modal"] p,
+  [data-rk] [class*="modal"] span,
+  [data-rk] [class*="modal"] button {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    text-transform: none !important;
+  }
 }
 
 /* RainbowKit button container - keep inline */
