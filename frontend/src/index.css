@@ -558,6 +558,17 @@ body > div > div > div.ju367v9h {
     max-width: 100% !important;
     overflow: hidden !important;
   }
+  
+  /* Force English text for Connect Wallet button on mobile */
+  [data-rk] [data-testid="rk-connect-button"] * {
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+  
+  /* Override any Russian text in Connect button */
+  [data-rk] [data-testid="rk-connect-button"] span,
+  [data-rk] [data-testid="rk-connect-button"] div {
+    text-transform: none !important;
+  }
 }
 
 /* RainbowKit button container - keep inline */

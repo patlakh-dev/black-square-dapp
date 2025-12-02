@@ -44,7 +44,7 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative border-2 border-ivory/20 bg-black aspect-square overflow-hidden"
+          className="relative border-2 border-ivory/20 bg-black aspect-square overflow-hidden max-w-[200px] mx-auto md:max-w-none md:mx-0"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full">

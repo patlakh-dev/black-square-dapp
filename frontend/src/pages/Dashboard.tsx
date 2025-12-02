@@ -42,7 +42,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid gap-2 md:gap-6">
-          <div className="flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-4 text-xs uppercase tracking-[0.4em]">
+          <div className="hidden md:flex md:flex-row md:flex-wrap gap-2 md:gap-4 text-xs uppercase tracking-[0.4em]">
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
