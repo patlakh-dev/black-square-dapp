@@ -67,6 +67,13 @@ git init
 
 ---
 
+**✅ Шаги 4-5 также выполнены автоматически:**
+- Все файлы добавлены в Git (77 файлов)
+- Создан первый коммит: "Initial commit: Black Square dApp with NFT staking"
+- Репозиторий подключен к GitHub: https://github.com/patlakh-dev/black-square-dapp
+
+---
+
 ### Шаг 4: Добавление файлов в Git
 
 **Проверьте, что вы в правильной папке:**
