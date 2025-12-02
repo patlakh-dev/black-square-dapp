@@ -147,7 +147,7 @@ function App() {
                               <button
                                 onClick={openAccountModal}
                                 type="button"
-                                className="border border-ivory/20 bg-black px-4 py-2 text-xs uppercase tracking-[0.3em] text-ivory transition hover:border-flare hover:text-flare"
+                                className="border border-ivory/20 bg-black px-4 py-2 text-xs uppercase tracking-[0.3em] text-ivory transition hover:border-flare hover:text-flare max-w-[200px] md:max-w-none overflow-hidden text-ellipsis whitespace-nowrap"
                               >
                                 {account.displayName}
                                 {account.displayBalance

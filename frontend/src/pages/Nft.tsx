@@ -151,12 +151,13 @@ export default function NftPage() {
             Supply is uncapped, yet the contract enforces one mint per wallet.
           </p>
         </div>
-        <div className="md:hidden">
-          <p className="text-center text-sm text-ivory/60">
-            Token metadata is an on-chain JSON stub with an SVG homage to Malevich&apos;s square.
-            Supply is uncapped, yet the contract enforces one mint per wallet.
-          </p>
-        </div>
+      </div>
+      
+      <div className="md:hidden">
+        <p className="text-center text-sm text-ivory/60">
+          Token metadata is an on-chain JSON stub with an SVG homage to Malevich&apos;s square.
+          Supply is uncapped, yet the contract enforces one mint per wallet.
+        </p>
       </div>
 
       {nftStakingAddress && blackSquareAddress && <NFTStakingPanel />}
