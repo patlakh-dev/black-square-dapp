@@ -40,14 +40,16 @@ yarn-error.log*
 *.temp
 
 # Personal development files (keep locally, don't commit)
-GITHUB_DEPLOYMENT.md
-PUSH_TO_GITHUB.md
+*_DEPLOYMENT.md
+*_DEPLOY.md
+*VERCEL*.md
+*FIX*.md
+*SOLUTION*.md
+RESUME*.md
 QUICK_START.md
 DEPLOYMENT_GUIDE.md
-DEPLOY_VERCEL.md
 ИНСТРУКЦИЯ.md
-SECURITY_AUDIT.md
-SECURITY_AUDIT_2024.md
+SECURITY_AUDIT*.md
 view-rewards.html
 upload-to-ipfs.js
 upload-to-pinata.js
