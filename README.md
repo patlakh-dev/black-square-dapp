@@ -15,7 +15,6 @@ Minimalist, suprematism-inspired Web3 dApp featuring NFT staking, wallet managem
 
 - **Frontend:** React 19, Vite, TypeScript, TailwindCSS, wagmi + viem, RainbowKit, Framer Motion
 - **Contracts:** Solidity 0.8.24, Hardhat, OpenZeppelin ERC-721, IPFS (Pinata) for metadata
-- **Deployment:** Vercel, Netlify (frontend), Sepolia testnet (contracts)
 
 ## Project Structure
 
@@ -88,34 +87,6 @@ npm run build && npm run preview
 - Suprematist design inspired by Kazimir Malevich
 - Fully responsive mobile-first design
 - Smooth animations with Framer Motion
-
-## Deployment
-
-### Quick Deploy
-
-**Vercel:**
-1. Push code to GitHub
-2. Import project in Vercel
-3. Set root directory to `frontend`
-4. Add environment variables
-5. Deploy
-
-**Netlify:**
-1. Push code to GitHub
-2. Import project in Netlify
-3. Set base directory to `frontend`
-4. Add environment variables
-5. Deploy
-
-Both platforms support automatic deployments from GitHub.
-
-### Environment Variables for Deployment
-
-Add these in Vercel/Netlify dashboard:
-- `VITE_WALLETCONNECT_PROJECT_ID`
-- `VITE_BLACK_SQUARE_CONTRACT_ADDRESS`
-- `VITE_NFT_STAKING_ADDRESS`
-- `VITE_MALEVICH_COLLECTION_ADDRESS`
 
 ## Testing
 
